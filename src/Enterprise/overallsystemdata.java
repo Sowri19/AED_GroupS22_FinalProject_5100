@@ -8,6 +8,6 @@ package Enterprise;
  *
  * @author sampathkorturti
  */
-public class overallsystem {
+public class overallsystemdata {
     
 }
