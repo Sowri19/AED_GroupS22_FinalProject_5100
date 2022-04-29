@@ -8,6 +8,8 @@ package Enterprise;
  *
  * @author sampathkorturti
  */
-public class overallsystemdata {
-    
+public class configuration {
+    public static overallSystem configure() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }
