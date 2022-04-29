@@ -20,6 +20,5 @@ public class Reservations {
     private Date checkin;
     private Date checkout;
     private String status;
-    private int cost;
-
+    private int costing;
 }
