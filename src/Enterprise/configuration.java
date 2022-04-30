@@ -10,6 +10,6 @@ package Enterprise;
  */
 public class configuration {
     public static overallSystem configure() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        throw new UnsupportedOperationException("This is not supported yet, please check again");
     }
 }
