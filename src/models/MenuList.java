@@ -8,6 +8,6 @@ package models;
  *
  * @author sampathkorturti
  */
-public class cars {
+public class MenuList {
     
 }
