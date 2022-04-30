@@ -8,6 +8,6 @@ package models.dep;
  *
  * @author sampathkorturti
  */
-public class decorDep {
+public class musicDep {
     
 }
