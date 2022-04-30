@@ -4,11 +4,10 @@
  */
 package models.dep;
 
-
 /**
  *
  * @author sampathkorturti
  */
-public class HotelDep {
+public class resortDep {
     
 }

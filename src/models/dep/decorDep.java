@@ -4,11 +4,10 @@
  */
 package models.dep;
 
-
 /**
  *
  * @author sampathkorturti
  */
-public class DecorDep {
+public class decorDep {
     
 }
