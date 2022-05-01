@@ -74,3 +74,26 @@ public class RS_BC_Events extends RS_BusinessCatalogue {
         listOfSupervisor.add(supervisor);
         return supervisor;
     }
+
+    public RS_Supervisor findSupervisor(String username) {
+        for (RS_Supervisor supr : listOfSupervisor) {
+            if (supr.getUsername().equals(username)) {
+                return supr;
+            }
+        }
+        return null;
+    }
+
+    public void addBirthdayParty(String name, String contact, String city) {
+        RS_Event_BirthdayParty bp = new RS_Event_BirthdayParty(name, contact, city);
+        System.out.println(name);
+        listOfBirthdayParty.add(bp);
+        System.out.println("BirthDay Party size is " + listOfBirthdayParty.size() + " name is " + listOfBirthdayParty.get(0).getName());
+
+    }
+
+    public void addWeddingServices(String name, String contact, String city) {
+        RS_Event_Wedding wed = new RS_Event_Wedding(name, contact, city);
+        listOfWeddingServices.add(wed);
+
+    }
