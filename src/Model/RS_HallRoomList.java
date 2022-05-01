@@ -41,3 +41,13 @@ public class RS_HallRoomList {
         }
     }
 
+    public void createHallRoom(HallRoomType type) {
+        RS_HallType room = new RS_HallType(type, nextRoomorHallNumber);
+        nextRoomorHallNumber++;
+        listOfHalls.add(room);
+    }
+
+    public String toString() {
+        return listOfHalls.toString();
+    }
+}
