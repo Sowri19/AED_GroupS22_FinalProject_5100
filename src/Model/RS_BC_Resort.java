@@ -51,12 +51,12 @@ public class RS_BC_Resort extends RS_BusinessCatalogue {
     public RS_HallRoomList getHallRoomListDirectory() {
         return hallRoomListDirectory;
     }
-    
+
     public void setHallRoomListDirectory(RS_HallRoomList roomList) {
         this.hallRoomListDirectory = roomList;
     }
 
-    public List<RS_HallType> availableRooms(Date startDate, Date endDate, HallRoomType roomType) {
+    public List<RS_HallType> availableRooms(Date startDate, Date endDate, RoomType roomType) {
         List<RS_HallType> availableRooms = new ArrayList<>();
         for (RS_HallType hall : hallRoomListDirectory.getListOfHallRoom()) {
             if (hall.getHallRoomType().equals(roomType) && hall.isAvailable(startDate, endDate)) {
@@ -65,3 +65,64 @@ public class RS_BC_Resort extends RS_BusinessCatalogue {
         }
         return availableRooms;
     }
+
+    public List<RS_HallType> bookRooms(Date startDate, Date endDate, int count, RoomType roomType) {
+        List<RS_HallType> availableRooms = availableRooms(startDate, endDate, roomType);
+        if (availableRooms.size() < count) {
+            throw new IllegalArgumentException("Hall is not available for the specified date.");
+        }
+
+        for (int i = 0; i < count; i++) {
+            availableRooms.get(i).book(startDate, endDate);
+        }
+
+        // return booked hall list
+        return availableRooms.subList(0, count);
+    }
+
+    public List<RS_Supervisor> getListOfSupervisor() {
+        return listOfSupervisor;
+    }
+
+    public void setListOfSupervisor(List<RS_Supervisor> listOfSupervisor) {
+        this.listOfSupervisor = listOfSupervisor;
+    }
+
+    public RS_Supervisor addSupervisor(String name, String username, String password) {
+        RS_Supervisor supervisor = new RS_Supervisor(name, username, password);
+        listOfSupervisor.add(supervisor);
+        return supervisor;
+    }
+
+    public RS_Supervisor findSupervisor(String username) {
+        for (RS_Supervisor supr : listOfSupervisor) {
+            if (supr.getUsername().equals(username)) {
+                return supr;
+            }
+        }
+        return null;
+    }
+
+    public void addTourGuideORG(String name, String contact, String city) {
+        RS_TourGuideORG tourGuideORG1 = new RS_TourGuideORG(name, contact, city);
+        tourGuideORG.add(tourGuideORG1);
+    }
+
+    public void addCarServiceORG(String name, String contact, String serviceLocationName) {
+        RS_CarServiceORG to = new RS_CarServiceORG(name, contact, serviceLocationName);
+        carServiceORGList.add(to);
+    }
+
+    public void deleteSupervisor(RS_Supervisor supr) {
+        listOfSupervisor.remove(supr);
+    }
+
+    public void deleteTourGuide(RS_TourGuideORG tourGuide) {
+        tourGuideORG.remove(tourGuide);
+    }
+
+    public void deleteCarService(RS_CarServiceORG carService) {
+        carServiceORGList.remove(carService);
+    }
+
+}
