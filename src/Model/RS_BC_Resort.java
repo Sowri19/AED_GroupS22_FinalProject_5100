@@ -101,3 +101,27 @@ public class RS_BC_Resort extends RS_BusinessCatalogue {
             }
         }
         return null;
+
+    public void addTourGuideORG(String name, String contact, String city) {
+        RS_TourGuideORG tourGuideORG1 = new RS_TourGuideORG(name, contact, city);
+        tourGuideORG.add(tourGuideORG1);
+    }
+
+    public void addCarServiceORG(String name, String contact, String serviceLocationName) {
+        RS_CarServiceORG to = new RS_CarServiceORG(name, contact, serviceLocationName);
+        carServiceORGList.add(to);
+    }
+
+    public void deleteSupervisor(RS_Supervisor supr) {
+        listOfSupervisor.remove(supr);
+    }
+
+    public void deleteTourGuide(RS_TourGuideORG tourGuide) {
+        tourGuideORG.remove(tourGuide);
+    }
+
+    public void deleteCarService(RS_CarServiceORG carService) {
+        carServiceORGList.remove(carService);
+    }
+
+}
