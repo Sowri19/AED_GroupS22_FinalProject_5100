@@ -108,3 +108,29 @@ public class RS_BusinessCatalogueDirectory {
         return null;
     }
 
+    public RS_BC_Events findEvents(String name) {
+        for (RS_BC_Events event : listOfEvents) {
+            if (event.getName().equals(name)) {
+                return event;
+            }
+        }
+        return null;
+    }
+
+    public void deleteBusinessCatalogueEvents(RS_BC_Events event) {
+        listOfEvents.remove(event);
+    }
+
+    public void deleteBusinessCatalogueEntertainment(RS_BC_Entertainment Entertainment) {
+        listOfEntertainment.remove(Entertainment);
+    }
+
+    public void deleteBusinessCatalogueCatering(RS_BC_Catering cater) {
+        listOfCatering.remove(cater);
+    }
+
+    public void deleteBusinessCatalogueResort(RS_BC_Resort resort) {
+        listOfResort.remove(resort);
+    }
+}
+
