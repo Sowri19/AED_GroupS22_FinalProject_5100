@@ -65,3 +65,39 @@ public class RS_BC_Resort extends RS_BusinessCatalogue {
         }
         return availableRooms;
     }
+
+    public List<RS_HallType> bookRooms(Date startDate, Date endDate, int count, RoomType roomType) {
+        List<RS_HallType> availableRooms = availableRooms(startDate, endDate, roomType);
+        if (availableRooms.size() < count) {
+            throw new IllegalArgumentException("Hall is not available for the specified date.");
+        }
+
+        for (int i = 0; i < count; i++) {
+            availableRooms.get(i).book(startDate, endDate);
+        }
+
+        // return booked hall list
+        return availableRooms.subList(0, count);
+    }
+
+    public List<RS_Supervisor> getListOfSupervisor() {
+        return listOfSupervisor;
+    }
+
+    public void setListOfSupervisor(List<RS_Supervisor> listOfSupervisor) {
+        this.listOfSupervisor = listOfSupervisor;
+    }
+
+    public RS_Supervisor addSupervisor(String name, String username, String password) {
+        RS_Supervisor supervisor = new RS_Supervisor(name, username, password);
+        listOfSupervisor.add(supervisor);
+        return supervisor;
+    }
+
+    public RS_Supervisor findSupervisor(String username) {
+        for (RS_Supervisor supr : listOfSupervisor) {
+            if (supr.getUsername().equals(username)) {
+                return supr;
+            }
+        }
+        return null;
