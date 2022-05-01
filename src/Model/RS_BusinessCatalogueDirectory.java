@@ -74,4 +74,37 @@ public class RS_BusinessCatalogueDirectory {
     public void addEvents(String name, String contact) {
         RS_BC_Events event = new RS_BC_Events(name, contact);
         listOfEvents.add(event);
+    }
+
+    public void addResort(String name, String contact) {
+        RS_BC_Resort resort = new RS_BC_Resort(name, contact);
+        listOfResort.add(resort);
+    }
+
+    public RS_BC_Resort findResort(String resortName) {
+        for (RS_BC_Resort resort : listOfResort) {
+            if (resort.getName().equals(resortName)) {
+                return resort;
+            }
+        }
+        return null;
+    }
+
+    public RS_BC_Entertainment findEntertainment(String entertainmentName) {
+        for (RS_BC_Entertainment entr : listOfEntertainment) {
+            if (entr.getName().equals(entertainmentName)) {
+                return entr;
+            }
+        }
+        return null;
+    }
+
+    public RS_BC_Catering findCatering(String name) {
+        for (RS_BC_Catering entertainment : listOfCatering) {
+            if (entertainment.getName().equals(name)) {
+                return entertainment;
+            }
+        }
+        return null;
+    }
 
