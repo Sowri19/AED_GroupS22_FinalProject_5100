@@ -73,3 +73,38 @@ public class RS_BC_Entertainment extends RS_BusinessCatalogue {
         return null;
     }
 
+    public void addMagicianORG(String name, String contact, String city) {
+        RS_Entertainment_MagicianORG magicianORG = new RS_Entertainment_MagicianORG(name, contact, city);
+        listOfMagicianORG.add(magicianORG);
+    }
+
+    public void addSingerORG(String name, String contact, String city) {
+        RS_Entertainment_SingerORG singerORG = new RS_Entertainment_SingerORG(name, contact, city);
+        listOfSingerORG.add(singerORG);
+    }
+
+    public void addChoreographerORG(String name, String contact, String serviceLocationName) {
+        RS_Entertainment_ChoreographerORG choreographerORG = new RS_Entertainment_ChoreographerORG(name, contact, serviceLocationName);
+        listOfChoreographerORG.add(choreographerORG);
+    }
+    
+    public String toString() {
+        return name;
+    }
+
+    public void deleteSupervisor(RS_Supervisor supr) {
+        listOfSupervisor.remove(supr);
+    }
+
+    public void deleteMagician(RS_Entertainment_MagicianORG magician) {
+      listOfMagicianORG.remove(magician);
+    }
+
+    public void deleteChoreographer(RS_Entertainment_ChoreographerORG choreographer) {
+        listOfChoreographerORG.remove(choreographer);
+    }
+
+    public void deleteSinger(RS_Entertainment_SingerORG singer) {
+           listOfSingerORG.remove(singer);
+    }
+}
