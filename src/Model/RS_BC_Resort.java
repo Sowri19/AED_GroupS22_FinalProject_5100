@@ -31,3 +31,23 @@ public class RS_BC_Resort extends RS_BusinessCatalogue {
         carServiceORGList = new ArrayList<>();
         tourGuideORG = new ArrayList<>();
     }
+
+    public List<RS_TourGuideORG> getTourGuideORG() {
+        return tourGuideORG;
+    }
+
+    public void setTourGuideORG(List<RS_TourGuideORG> tourGuideList) {
+        this.tourGuideORG = tourGuideList;
+    }
+
+    public List<RS_CarServiceORG> getCarServiceORGList() {
+        return carServiceORGList;
+    }
+
+    public void setCarServiceORGList(List<RS_CarServiceORG> carServiceList) {
+        this.carServiceORGList = carServiceList;
+    }
+
+    public RS_HallRoomList getHallRoomListDirectory() {
+        return hallRoomListDirectory;
+    }
