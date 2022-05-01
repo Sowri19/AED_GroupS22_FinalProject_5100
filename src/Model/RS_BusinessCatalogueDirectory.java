@@ -29,3 +29,49 @@ public class RS_BusinessCatalogueDirectory {
         listOfCatering = new ArrayList<>();
     }
 
+    public List<RS_BC_Resort> getListOfResort() {
+        return listOfResort;
+    }
+
+    public void setListOfResort(List<RS_BC_Resort> listOfResort) {
+        this.listOfResort = listOfResort;
+    }
+
+    public List<RS_BC_Events> getListOfEvents() {
+        return listOfEvents;
+    }
+
+    public void setListOfEvents(List<RS_BC_Events> listOfEvents) {
+        this.listOfEvents = listOfEvents;
+    }
+
+    public List<RS_BC_Entertainment> getListOfEntertainment() {
+        return listOfEntertainment;
+    }
+
+    public void setListOfEntertainment(List<RS_BC_Entertainment> listOfEntertainment) {
+        this.listOfEntertainment = listOfEntertainment;
+    }
+
+    public List<RS_BC_Catering> getListOfCatering() {
+        return listOfCatering;
+    }
+
+    public void setListOfCatering(List<RS_BC_Catering> listOfCatering) {
+        this.listOfCatering = listOfCatering;
+    }
+
+    public void addEntertainment(String name, String contact) {
+        RS_BC_Entertainment entertainment = new RS_BC_Entertainment(name, contact);
+        listOfEntertainment.add(entertainment);
+    }
+
+    public void addCatering(String name, String contact) {
+        RS_BC_Catering catering = new RS_BC_Catering(name, contact);
+        listOfCatering.add(catering);
+    }
+
+    public void addEvents(String name, String contact) {
+        RS_BC_Events event = new RS_BC_Events(name, contact);
+        listOfEvents.add(event);
+
