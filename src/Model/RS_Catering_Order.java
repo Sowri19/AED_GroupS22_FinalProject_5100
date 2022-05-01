@@ -26,3 +26,62 @@ public class RS_Catering_Order {
       public String getFeedback() {
         return feedback;
     }
+      
+
+    public void setFeedback(String feedback) {
+        this.feedback = feedback;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public RS_ServiceAgent getServiceAgent() {
+        return serviceAgent;
+    }
+
+    public void setServiceAgent(RS_ServiceAgent serviceAgent) {
+        this.serviceAgent = serviceAgent;
+    }
+
+    public RS_BC_Catering getCatering() {
+        return catering;
+    }
+
+    public void setCatering(RS_BC_Catering catering) {
+        this.catering = catering;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public RS_Client getClient() {
+        return client;
+    }
+
+    public void setClient(RS_Client client) {
+        this.client = client;
+    }
+
+    public String toString() {
+        return details;
+    }
+}
+
