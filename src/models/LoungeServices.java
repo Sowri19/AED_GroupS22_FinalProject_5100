@@ -6,8 +6,8 @@ package models;
 
 /**
  *
- * @author sampathkorturti
+ * @author aishw
  */
-public class Lounges {
+public class LoungeServices {
     
 }
