@@ -24,3 +24,38 @@ public class RS_ServiceAgent extends RS_Person {
         this.city = city;
     }
 
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public List<RS_Catering_Order> getList() {
+        return list;
+    }
+
+    public void setList(List<RS_Catering_Order> list) {
+        this.list = list;
+    }
+
+    public void addOrder(RS_Catering_Order order) {
+        list.add(order);
+    }
+
+    public RS_Catering_Order findOrder(String orderId) {
+        for (int i = 0; i < list.size(); i++) {
+            if (orderId.equals(list.get(i).getId())) {
+                return list.get(i);
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
+
+}

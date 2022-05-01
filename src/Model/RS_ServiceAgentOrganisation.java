@@ -29,4 +29,18 @@ public class RS_ServiceAgentOrganisation extends RS_Organization{
         this.listOfServiceAgent = listOfServiceAgent;
     }
 
+    public void addServiceAgent(String name, String city, String user, String password1) {
+        RS_ServiceAgent del = new RS_ServiceAgent(name, city, user, password1);
+        listOfServiceAgent.add(del);
+        System.out.println("Service Agent manager added is " + listOfServiceAgent.size());
+    }
 
+    public void deleteServiceAgent(RS_ServiceAgentOrganisation del) {
+     listOfServiceAgent.remove(del);
+    }
+
+    public void deleteSupervisor(RS_Supervisor supr) {
+      listOfSupervisor.remove(supr);
+    }
+
+}
