@@ -97,3 +97,26 @@ public class RS_BC_Events extends RS_BusinessCatalogue {
         listOfWeddingServices.add(wed);
 
     }
+
+    public void addMeetings(String name, String contact, String city) {
+        RS_Event_Meetings met = new RS_Event_Meetings(name, contact, city);
+        listOfMeetings.add(met);
+    }
+
+    public void deleteSupervisor(RS_Supervisor supr) {
+        listOfSupervisor.remove(supr);
+    }
+
+    public void deleteBirthdayParty(RS_Event_BirthdayParty birthdayParty) {
+        listOfBirthdayParty.remove(birthdayParty);
+    }
+
+    public void deleteWeddingServices(RS_Event_Wedding wed) {
+        listOfWeddingServices.remove(wed);
+    }
+
+    public void deleteMeetings(RS_Event_Meetings met) {
+        listOfMeetings.remove(met);
+    }
+
+}
