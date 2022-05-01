@@ -26,4 +26,32 @@ public class RS_Event_Wedding extends RS_Organization {
             this.name = name;
             this.description = description;
         }
+
+        public int getRate() {
+            return rate;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String toString() {
+            return getName() + " (" + description + ")";
+        }
+    }
+
+    public RS_Event_Wedding(String name, String contact, String city) {
+        super(name, contact, city);
+    }
+
+    public RS_Supervisor addSupervisor(String name, String city, String user, String password1) {
+        RS_Supervisor supervisor = new RS_Supervisor(name, user, password1);
+        listOfSupervisor.add(supervisor);
+        System.out.println("size of manager in Event is " + listOfSupervisor.size() + " name is " + supervisor.getUsername());
+        return supervisor;
+    }
+     public void deleteSupervisor(RS_Supervisor supr) {
+        listOfSupervisor.remove(supr);
+    }
+
 }

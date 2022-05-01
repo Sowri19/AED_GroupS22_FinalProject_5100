@@ -30,3 +30,26 @@ public class RS_Event_Meetings extends RS_Organization {
             this.description = description;
         }
 
+
+        public int getRate() {
+            return rate;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public String toString() {
+            return name + "(" + description + ")";
+        }
+    }
+
+    public void deleteSupervisor(RS_Supervisor supr) {
+        listOfSupervisor.remove(supr);
+    }
+
+}
