@@ -28,3 +28,27 @@ public class RS_BC_Events extends RS_BusinessCatalogue {
         listOfMeetings = new ArrayList<>();
 
     }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public List<RS_Supervisor> getListOfSupervisor() {
+        return listOfSupervisor;
+    }
+
+    public void setListOfSupervisor(List<RS_Supervisor> listOfSupervisor) {
+        this.listOfSupervisor = listOfSupervisor;
+    }
+
+    public List<RS_Event_BirthdayParty> getListOfBirthdayParty() {
+        return listOfBirthdayParty;
+    }
+
+    public void setListOfBirthdayParty(List<RS_Event_BirthdayParty> listOfBirthdayParty) {
+        this.listOfBirthdayParty = listOfBirthdayParty;
+    }
