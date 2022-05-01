@@ -51,12 +51,12 @@ public class RS_BC_Resort extends RS_BusinessCatalogue {
     public RS_HallRoomList getHallRoomListDirectory() {
         return hallRoomListDirectory;
     }
-    
+
     public void setHallRoomListDirectory(RS_HallRoomList roomList) {
         this.hallRoomListDirectory = roomList;
     }
 
-    public List<RS_HallType> availableRooms(Date startDate, Date endDate, HallRoomType roomType) {
+    public List<RS_HallType> availableRooms(Date startDate, Date endDate, RoomType roomType) {
         List<RS_HallType> availableRooms = new ArrayList<>();
         for (RS_HallType hall : hallRoomListDirectory.getListOfHallRoom()) {
             if (hall.getHallRoomType().equals(roomType) && hall.isAvailable(startDate, endDate)) {
@@ -101,6 +101,7 @@ public class RS_BC_Resort extends RS_BusinessCatalogue {
             }
         }
         return null;
+    }
 
     public void addTourGuideORG(String name, String contact, String city) {
         RS_TourGuideORG tourGuideORG1 = new RS_TourGuideORG(name, contact, city);
