@@ -50,3 +50,44 @@ public class RS_BC_Catering extends RS_BusinessCatalogue {
     public List<RS_Catering_Order> getListOfCateringOrder() {
         return listOfCateringOrder;
     }
+
+    public void setListOfCateringOrder(List<RS_Catering_Order> listOfCateringOrder) {
+        this.listOfCateringOrder = listOfCateringOrder;
+    }
+
+    public List<RS_ServiceAgentOrganisation> getListOfServiceAgentOrganisation() {
+        return listOfServiceAgentOrganisation;
+    }
+
+    public void setListOfServiceAgentOrganisation(List<RS_ServiceAgentOrganisation> listOfServiceAgentOrganisation) {
+        this.listOfServiceAgentOrganisation = listOfServiceAgentOrganisation;
+    }
+
+    public RS_Supervisor addSupervisor(String name, String username, String password) {
+        RS_Supervisor supervisor = new RS_Supervisor(name, username, password);
+        listOfSupervisor.add(supervisor);
+        return supervisor;
+    }
+
+    public RS_Supervisor findSupervisor(String username) {
+        for (RS_Supervisor supr : listOfSupervisor) {
+            if (supr.getUsername().equals(username)) {
+                return supr;
+            }
+        }
+        return null;
+    }
+
+    public void addServiceAgentOrganisation(String name, String contact, String ServiceLocationName) {
+        RS_ServiceAgentOrganisation del = new RS_ServiceAgentOrganisation(name, contact, ServiceLocationName);
+        listOfServiceAgentOrganisation.add(del);
+    }
+
+    public void addMenuItem(String item, int price) {
+        listOfMenuItem.add(new RS_Catering_Menu(item, price));
+    }
+
+    public void deleteSupervisor(RS_Supervisor supr) {
+        listOfSupervisor.remove(supr);
+    }
+}
