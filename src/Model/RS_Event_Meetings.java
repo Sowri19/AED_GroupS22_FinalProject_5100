@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package hello;
+package Model;
 
 /**
  *
- * @author sampathkorturti
+ * @author Pavithra Ramkumar
  */
-public class LoungeOrg {
+public class RS_Event_Meetings {
     
 }
