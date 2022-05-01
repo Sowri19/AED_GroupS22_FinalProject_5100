@@ -37,4 +37,39 @@ public class RS_BC_Entertainment extends RS_BusinessCatalogue {
     public List<RS_Entertainment_MagicianORG> getListOfMagicianORG() {
         return listOfMagicianORG;
     }
+   public void setListOfMagicianORG(List<RS_Entertainment_MagicianORG> listOfMagicianORG) {
+        this.listOfMagicianORG = listOfMagicianORG;
+    }
+
+    public List<RS_Entertainment_ChoreographerORG> getListOfChoreographerORG() {
+        return listOfChoreographerORG;
+    }
+
+    public void setListOfChoreographerORG(List<RS_Entertainment_ChoreographerORG> listOfChoreographerORG) {
+        this.listOfChoreographerORG = listOfChoreographerORG;
+    }
+
+    public List<RS_Supervisor> getListOfSupervisor() {
+        return listOfSupervisor;
+    }
+
+    public void setListOfSupervisor(List<RS_Supervisor> listOfSupervisor) {
+        this.listOfSupervisor = listOfSupervisor;
+    }
+
+    public RS_Supervisor addSupervisor(String name, String username, String password) {
+        RS_Supervisor supervisor = new RS_Supervisor(name, username, password);
+        listOfSupervisor.add(supervisor);
+        System.out.println("size of supervisor in Entertainment is " + listOfSupervisor.size() + " name is " + supervisor.getUsername());
+        return supervisor;
+    }
+
+    public RS_Supervisor findSupervisor(String username) {
+        for (RS_Supervisor supr : listOfSupervisor) {
+            if (supr.getUsername().equals(username)) {
+                return supr;
+            }
+        }
+        return null;
+    }
 
