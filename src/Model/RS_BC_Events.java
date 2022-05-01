@@ -52,3 +52,25 @@ public class RS_BC_Events extends RS_BusinessCatalogue {
     public void setListOfBirthdayParty(List<RS_Event_BirthdayParty> listOfBirthdayParty) {
         this.listOfBirthdayParty = listOfBirthdayParty;
     }
+
+    public List<RS_Event_Wedding> getListOfWeddingServices() {
+        return listOfWeddingServices;
+    }
+
+    public void setListOfWeddingServices(List<RS_Event_Wedding> listOfWeddingServices) {
+        this.listOfWeddingServices = listOfWeddingServices;
+    }
+
+    public List<RS_Event_Meetings> getListOfMeetings() {
+        return listOfMeetings;
+    }
+
+    public void setListOfMeetings(List<RS_Event_Meetings> listOfMeetings) {
+        this.listOfMeetings = listOfMeetings;
+    }
+
+    public RS_Supervisor addSupervisor(String name, String username, String password) {
+        RS_Supervisor supervisor = new RS_Supervisor(name, username, password);
+        listOfSupervisor.add(supervisor);
+        return supervisor;
+    }
