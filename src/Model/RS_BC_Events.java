@@ -8,6 +8,10 @@ package model;
  *
  * @author Pavithra Ramkumar
  */
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 public class RS_BC_Events {
     
 }
