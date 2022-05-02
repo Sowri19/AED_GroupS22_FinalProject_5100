@@ -1,4 +1,4 @@
-package ui.EventPlannerAdmin;
+package ui.EventPlannerAdminRole;
 
 import java.util.List;
 import javax.swing.JOptionPane;

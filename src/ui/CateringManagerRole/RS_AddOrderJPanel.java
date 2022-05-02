@@ -25,11 +25,11 @@ public class RS_AddOrderJPanel extends javax.swing.JPanel {
         this.user = user;
         this.type = type;
         this.location = location;
-        setBackground(new java.awt.Color(255, 204, 204));
+        setBackground(new java.awt.Color(206, 73, 93));
         populateMenu();
-        addBtn.setBackground(new java.awt.Color(244, 120, 140));
+        addBtn.setBackground(new java.awt.Color(0, 120, 140));
         addBtn.setOpaque(true);
-        backButton.setBackground(new java.awt.Color(244, 120, 140));
+        backButton.setBackground(new java.awt.Color(0, 120, 140));
         backButton.setOpaque(true);
 
     }
@@ -65,6 +65,8 @@ public class RS_AddOrderJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         priceField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+
+        setForeground(new java.awt.Color(64, 162, 237));
 
         jTable1.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
