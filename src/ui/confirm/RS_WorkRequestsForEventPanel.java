@@ -22,7 +22,7 @@ public class RS_WorkRequestsForEventPanel extends javax.swing.JPanel {
         this.type = type;
         lblbookservices.setText(lblbookservices.getText() + type.toUpperCase() + " ORGANIZATION");
         populateTable();
-        setBackground(new java.awt.Color(255, 204, 204));
+        setBackground(new java.awt.Color(255, 208, 56));
     }
 
     @SuppressWarnings("unchecked")
@@ -33,10 +33,10 @@ public class RS_WorkRequestsForEventPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
-        lblbookservices.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblbookservices.setText("ASSIGNED WORK REQUESTS FOR ");
+        lblbookservices.setFont(new java.awt.Font("Baskerville Old Face", 1, 24)); // NOI18N
+        lblbookservices.setText("ASSIGNED WORK REQUESTS  ");
 
-        jTable1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTable1.setFont(new java.awt.Font("Baskerville Old Face", 1, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -62,21 +62,21 @@ public class RS_WorkRequestsForEventPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
+                        .addGap(68, 68, 68)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 745, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(91, 91, 91)
+                        .addGap(198, 198, 198)
                         .addComponent(lblbookservices)))
-                .addContainerGap(442, Short.MAX_VALUE))
+                .addContainerGap(444, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(54, 54, 54)
                 .addComponent(lblbookservices)
-                .addGap(56, 56, 56)
+                .addGap(84, 84, 84)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(352, Short.MAX_VALUE))
+                .addContainerGap(329, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
