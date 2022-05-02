@@ -8,6 +8,22 @@ package RS_Model.services;
  *
  * @author sampathkorturti
  */
-public class RS_BC_EventService {
-    
-}
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import model.RS_HallBooking;
+import model.RS_BC_Events;
+
+public class RS_BC_EventService extends RS_Service {
+
+    private RS_HallBooking id;
+
+    public static enum EventServiceType {
+        WEDDING,
+        BIRTHDAYPARTY,
+        MEETINGS
+    }
+
+    private Map<EventServiceType, Integer> EventServiceTypes;
+
