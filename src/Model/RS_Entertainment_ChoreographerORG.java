@@ -1,13 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
-
-/**
- *
- * @author Pavithra Ramkumar
- */
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +11,7 @@ public class RS_Entertainment_ChoreographerORG extends RS_Organization {
         super(name, contact, city);
         listOfChoreographer = new ArrayList<>();
     }
-
+    
     public void addChoreographer(String name, String city, String user, String password1) {
         RS_Entertainment_Choreographer choreographer = new RS_Entertainment_Choreographer(name, city, user, password1);
         listOfChoreographer.add(choreographer);

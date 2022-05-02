@@ -33,7 +33,9 @@ public class RS_WorkRequestsForEventPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
-        lblbookservices.setFont(new java.awt.Font("Baskerville Old Face", 1, 24)); // NOI18N
+        setBackground(new java.awt.Color(255, 208, 56));
+
+        lblbookservices.setFont(new java.awt.Font("Baskerville Old Face", 3, 36)); // NOI18N
         lblbookservices.setText("ASSIGNED WORK REQUESTS  ");
 
         jTable1.setFont(new java.awt.Font("Baskerville Old Face", 1, 14)); // NOI18N
@@ -75,8 +77,8 @@ public class RS_WorkRequestsForEventPanel extends javax.swing.JPanel {
                 .addGap(54, 54, 54)
                 .addComponent(lblbookservices)
                 .addGap(84, 84, 84)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(329, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(448, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

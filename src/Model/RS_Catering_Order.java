@@ -1,13 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package Model;
 
-/**
- *
- * @author Pavithra Ramkumar
- */
+package model;
+
 import java.util.UUID;
 
 public class RS_Catering_Order {
@@ -26,7 +19,6 @@ public class RS_Catering_Order {
       public String getFeedback() {
         return feedback;
     }
-      
 
     public void setFeedback(String feedback) {
         this.feedback = feedback;
@@ -85,3 +77,4 @@ public class RS_Catering_Order {
     }
 }
 
+   

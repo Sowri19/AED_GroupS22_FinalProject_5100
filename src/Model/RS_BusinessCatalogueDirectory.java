@@ -1,19 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
-
-
-/**
- *
- * @author aishw
- */
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
 
 public class RS_BusinessCatalogueDirectory {
 
@@ -133,4 +122,3 @@ public class RS_BusinessCatalogueDirectory {
         listOfResort.remove(resort);
     }
 }
-

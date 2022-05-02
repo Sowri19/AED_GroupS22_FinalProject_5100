@@ -14,12 +14,12 @@ public class RS_EntertainmentSupervisorPanel extends javax.swing.JPanel {
         this.callOnCreateMethod1 = callOnCreateMethod1;
         this.callOnCreateMethod2 = callOnCreateMethod2;
         this.callOnCreateMethod3 = callOnCreateMethod3;
-       setBackground(new java.awt.Color(255, 204, 204));
-        btnDisplayDashboard.setBackground(new java.awt.Color(244, 120, 140));
+       setBackground(new java.awt.Color(255, 208, 56));
+        btnDisplayDashboard.setBackground(new java.awt.Color(0, 102, 102));
         btnDisplayDashboard.setOpaque(true);
-        btnSuperviseEvent.setBackground(new java.awt.Color(244, 120, 140));
+        btnSuperviseEvent.setBackground(new java.awt.Color(0, 102, 102));
         btnSuperviseEvent.setOpaque(true);
-        btnSuperviseEventAdmin.setBackground(new java.awt.Color(244, 120, 140));
+        btnSuperviseEventAdmin.setBackground(new java.awt.Color(0, 102, 102));
         btnSuperviseEventAdmin.setOpaque(true);
 
     }
@@ -32,11 +32,14 @@ public class RS_EntertainmentSupervisorPanel extends javax.swing.JPanel {
         btnDisplayDashboard = new javax.swing.JButton();
         btnSuperviseEvent = new javax.swing.JButton();
         btnSuperviseEventAdmin = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        setBackground(new java.awt.Color(255, 208, 56));
+
+        jLabel1.setFont(new java.awt.Font("Baskerville Old Face", 3, 36)); // NOI18N
         jLabel1.setText("ENTERTAINMENT SUPERVISOR PANEL ");
 
-        btnDisplayDashboard.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnDisplayDashboard.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
         btnDisplayDashboard.setText("DISPLAY DASHBOARD");
         btnDisplayDashboard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -44,7 +47,7 @@ public class RS_EntertainmentSupervisorPanel extends javax.swing.JPanel {
             }
         });
 
-        btnSuperviseEvent.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnSuperviseEvent.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
         btnSuperviseEvent.setText("SUPERVISE EVENT");
         btnSuperviseEvent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -52,7 +55,7 @@ public class RS_EntertainmentSupervisorPanel extends javax.swing.JPanel {
             }
         });
 
-        btnSuperviseEventAdmin.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnSuperviseEventAdmin.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
         btnSuperviseEventAdmin.setText("SUPERVISE EVENT ADMIN");
         btnSuperviseEventAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -60,38 +63,48 @@ public class RS_EntertainmentSupervisorPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Rs Icon.png"))); // NOI18N
+        jLabel8.setText("jLabel7");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(206, 206, 206))
+                .addContainerGap(365, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnSuperviseEvent, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(194, 194, 194))))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnSuperviseEventAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(270, 270, 270)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnDisplayDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnSuperviseEvent, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(289, Short.MAX_VALUE))
+                        .addGap(174, 174, 174)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnSuperviseEventAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnDisplayDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(67, 67, 67)
+                        .addComponent(jLabel1)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(54, 54, 54)
+                .addContainerGap()
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addGap(116, 116, 116)
-                .addComponent(btnDisplayDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51)
+                .addComponent(btnDisplayDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
                 .addComponent(btnSuperviseEvent, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
+                .addGap(37, 37, 37)
                 .addComponent(btnSuperviseEventAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(345, Short.MAX_VALUE))
+                .addContainerGap(366, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -113,5 +126,6 @@ public class RS_EntertainmentSupervisorPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnSuperviseEvent;
     private javax.swing.JButton btnSuperviseEventAdmin;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel8;
     // End of variables declaration//GEN-END:variables
 }

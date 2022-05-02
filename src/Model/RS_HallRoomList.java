@@ -1,17 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
-
-/**
- *
- * @author sampathkorturti
- */
 
 import java.util.ArrayList;
 import java.util.List;
-import model.RS_HallType.HallRoomType;
+import model.RS_HallType.RoomType;
 
 public class RS_HallRoomList {
 
@@ -41,7 +32,7 @@ public class RS_HallRoomList {
         }
     }
 
-    public void createHallRoom(HallRoomType type) {
+    public void createHallRoom(RoomType type) {
         RS_HallType room = new RS_HallType(type, nextRoomorHallNumber);
         nextRoomorHallNumber++;
         listOfHalls.add(room);

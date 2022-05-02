@@ -39,12 +39,13 @@ public class RS_ResortMainPanel extends javax.swing.JPanel {
         manageRooms = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 208, 56));
         setLayout(null);
 
-        lblsysadmin.setFont(new java.awt.Font("Baskerville Old Face", 1, 24)); // NOI18N
-        lblsysadmin.setText("RESORT MANAGER");
+        lblsysadmin.setFont(new java.awt.Font("Baskerville Old Face", 3, 36)); // NOI18N
+        lblsysadmin.setText("RESORT SUPERVISOR");
         add(lblsysadmin);
-        lblsysadmin.setBounds(240, 90, 300, 40);
+        lblsysadmin.setBounds(130, 90, 410, 40);
 
         orgAdminBtn.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
         orgAdminBtn.setText("ORGANIZATION ADMIN");
@@ -89,7 +90,7 @@ public class RS_ResortMainPanel extends javax.swing.JPanel {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Rs.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         add(jLabel1);
-        jLabel1.setBounds(580, 30, 280, 170);
+        jLabel1.setBounds(600, 30, 110, 130);
     }// </editor-fold>//GEN-END:initComponents
 
     private void orgAdminBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orgAdminBtnActionPerformed

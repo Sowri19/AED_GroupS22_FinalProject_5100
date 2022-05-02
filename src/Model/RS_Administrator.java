@@ -1,18 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
-import java.util.*;
-//import java.util.HashMap;
-//import java.util.List;
-//import java.util.Map;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-/**
- *
- * @author Pavithra Ramkumar
- */
 public class RS_Administrator {
 
     private List<RS_ServiceLocation> listOfServiceLocation;
@@ -63,7 +55,7 @@ public class RS_Administrator {
         this.clientDirectory = clientDirectory;
     }
 
-    public void addNetwork(String name) {
+    public void addLocation(String name) {
         RS_ServiceLocation serviceLocation = new RS_ServiceLocation(name);
         listOfServiceLocation.add(serviceLocation);
     }
@@ -121,4 +113,3 @@ public class RS_Administrator {
         return null;
     }
 }
-

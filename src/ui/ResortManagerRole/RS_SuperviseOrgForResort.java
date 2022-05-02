@@ -1,5 +1,7 @@
 package ui.ResortManagerRole;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -50,7 +52,7 @@ public class RS_SuperviseOrgForResort extends javax.swing.JPanel {
         orgCombo = new javax.swing.JComboBox<>();
         updateButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        contactField = new javax.swing.JTextField();
+        txtCreateMobileNumber = new javax.swing.JTextField();
         addBtn = new javax.swing.JButton();
         nameField = new javax.swing.JTextField();
         backButton = new javax.swing.JButton();
@@ -60,6 +62,10 @@ public class RS_SuperviseOrgForResort extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         deleteBtn = new javax.swing.JButton();
         cityNameTextField = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        error_mobilenumber = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(255, 208, 56));
 
         jTable1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -102,7 +108,13 @@ public class RS_SuperviseOrgForResort extends javax.swing.JPanel {
         });
 
         jLabel3.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
-        jLabel3.setText("CONTACT");
+        jLabel3.setText("CONTACT:");
+
+        txtCreateMobileNumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCreateMobileNumberActionPerformed(evt);
+            }
+        });
 
         addBtn.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
         addBtn.setText("ADD");
@@ -127,16 +139,16 @@ public class RS_SuperviseOrgForResort extends javax.swing.JPanel {
         });
 
         jLabel1.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
-        jLabel1.setText("NAME");
+        jLabel1.setText("NAME:");
 
-        lblsysadmin.setFont(new java.awt.Font("Baskerville Old Face", 1, 24)); // NOI18N
+        lblsysadmin.setFont(new java.awt.Font("Baskerville Old Face", 3, 36)); // NOI18N
         lblsysadmin.setText("SUPERVISE ORGANISATION FOR RESORT");
 
         jLabel6.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
         jLabel6.setText("CITY");
 
         jLabel2.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
-        jLabel2.setText("ORGANISATION TYPE ");
+        jLabel2.setText("ORGANISATION TYPE:");
 
         deleteBtn.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
         deleteBtn.setText("DELETE");
@@ -146,6 +158,9 @@ public class RS_SuperviseOrgForResort extends javax.swing.JPanel {
             }
         });
 
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Rs Icon.png"))); // NOI18N
+        jLabel7.setText("jLabel7");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -153,71 +168,113 @@ public class RS_SuperviseOrgForResort extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(backButton))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(83, 83, 83)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 801, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(211, 211, 211)
+                                .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(93, 93, 93)
+                                .addComponent(updateButton)
+                                .addGap(81, 81, 81)
+                                .addComponent(deleteBtn))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtCreateMobileNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cityNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(30, 30, 30)
+                                .addComponent(error_mobilenumber, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(206, 206, 206))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(159, 159, 159)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(13, 13, 13)
+                                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(255, 255, 255)
+                                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(0, 0, Short.MAX_VALUE))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(orgCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(33, 33, 33))))))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(201, 201, 201)
-                        .addComponent(lblsysadmin))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(159, 159, 159)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(60, 60, 60)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(cityNameTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(contactField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(nameField, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(99, 99, 99)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(orgCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(83, 83, 83)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 801, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(211, 211, 211)
-                        .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(126, 126, 126)
-                        .addComponent(updateButton)
-                        .addGap(113, 113, 113)
-                        .addComponent(deleteBtn)))
-                .addContainerGap(172, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(25, 25, 25)
+                                .addComponent(backButton))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(94, 94, 94)
+                                .addComponent(lblsysadmin, javax.swing.GroupLayout.PREFERRED_SIZE, 769, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(backButton)
-                .addGap(14, 14, 14)
-                .addComponent(lblsysadmin)
-                .addGap(55, 55, 55)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(backButton)
+                        .addGap(31, 31, 31)
+                        .addComponent(lblsysadmin))
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(62, 62, 62)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel2)))
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel3))
+                    .addComponent(orgCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCreateMobileNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(error_mobilenumber, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(contactField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(orgCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(cityNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(240, Short.MAX_VALUE))
+                .addComponent(jLabel6)
+                .addGap(3, 3, 3)
+                .addComponent(cityNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(196, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+    private void txtCreateMobileNumberKeyReleased(java.awt.event.KeyEvent evt){
+    String PATTERN = "^[0-9]{0,10}$";
+    Pattern pattern = Pattern.compile(PATTERN);
+Matcher match = pattern.matcher(txtCreateMobileNumber.getText());
+if(!match.matches())
+{
+error_mobilenumber.setText("Mobile Number format is incorrect!");
+}
+else if(txtCreateMobileNumber.getText().length()!= 10)
+{
+    error_mobilenumber.setText("Enter 10 digit phone no.");
+//JOptionPane.showMessageDialog(null,"Enter 10 digit phone no.");
+}
 
+else{
+error_mobilenumber.setText(null);
+}
+
+    }
     private void nameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameFieldActionPerformed
 
     }//GEN-LAST:event_nameFieldActionPerformed
@@ -235,13 +292,22 @@ public class RS_SuperviseOrgForResort extends javax.swing.JPanel {
         Object row[] = new Object[20];
         String networkName = location.getName(); //find the location from city-combobox
         String name = nameField.getText();
-        String contact = contactField.getText();
+        String contact = txtCreateMobileNumber.getText();
+        
 
         if (name == null || name.length() < 2) {
             JOptionPane.showMessageDialog(this, "Organization name should be at least 2 characters long.");
             return;
+            
         }
-
+        
+        
+        
+        else {
+            if(txtCreateMobileNumber.getText().length() != 10){
+             invalidphoneno();   
+            }
+            else{
         String orgType1 = orgCombo.getSelectedItem().toString();      // org-type (physician org)     
         RS_BusinessCatalogueDirectory businessCatalogueDirectory = location.getBusinessCatalogueDirectory();
         List<RS_BC_Resort> resort = businessCatalogueDirectory.getListOfResort();
@@ -267,7 +333,7 @@ public class RS_SuperviseOrgForResort extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(this, "Organisation added successfully");
                 return;
             }
-        }
+        }}}
     }//GEN-LAST:event_addBtnActionPerformed
 
     private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
@@ -325,7 +391,7 @@ public class RS_SuperviseOrgForResort extends javax.swing.JPanel {
                 for (RS_TourGuideORG tourGuide : resort.getTourGuideORG()) {
                     if (tourGuide.getName().equals(orgname)) {
                         tourGuide.setName(nameField.getText());
-                        tourGuide.setContact(contactField.getText());
+                        tourGuide.setContact(txtCreateMobileNumber.getText());
                         JOptionPane.showMessageDialog(this, "Updated successfully");
                         populateTable();
                         return;
@@ -335,7 +401,7 @@ public class RS_SuperviseOrgForResort extends javax.swing.JPanel {
                 for (RS_CarServiceORG car : resort.getCarServiceORGList()) {
                     if (car.getName().equals(orgname)) {
                         car.setName(nameField.getText());
-                        car.setContact(contactField.getText());
+                        car.setContact(txtCreateMobileNumber.getText());
                         JOptionPane.showMessageDialog(this, "Updated successfully");
                         populateTable();
                         return;
@@ -358,28 +424,34 @@ public class RS_SuperviseOrgForResort extends javax.swing.JPanel {
         String orgCity = model.getValueAt(jTable1.getSelectedRow(), 3).toString();
 
         nameField.setText(orgName);
-        contactField.setText(orgContact);
+        txtCreateMobileNumber.setText(orgContact);
         cityNameTextField.setText(orgCity);
         orgCombo.setSelectedItem(orgType);
         cityNameTextField.setEnabled(false);
     }//GEN-LAST:event_jTable1MouseClicked
+
+    private void txtCreateMobileNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCreateMobileNumberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCreateMobileNumberActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBtn;
     private javax.swing.JButton backButton;
     private javax.swing.JTextField cityNameTextField;
-    private javax.swing.JTextField contactField;
     private javax.swing.JButton deleteBtn;
+    private javax.swing.JLabel error_mobilenumber;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblsysadmin;
     private javax.swing.JTextField nameField;
     private javax.swing.JComboBox<String> orgCombo;
+    private javax.swing.JTextField txtCreateMobileNumber;
     private javax.swing.JButton updateButton;
     // End of variables declaration//GEN-END:variables
 
@@ -418,5 +490,25 @@ public class RS_SuperviseOrgForResort extends javax.swing.JPanel {
 
             }
         }
+    }
+
+    private void invalidphoneno() {
+//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+      String PATTERN = "^[0-9]{0,10}$";
+    Pattern pattern = Pattern.compile(PATTERN);
+Matcher match = pattern.matcher(txtCreateMobileNumber.getText());
+if(!match.matches())
+{
+error_mobilenumber.setText("Mobile Number format is incorrect!");
+}
+else if(txtCreateMobileNumber.getText().length()!= 10)
+{
+    error_mobilenumber.setText("Enter 10 digit phone no.");
+//JOptionPane.showMessageDialog(null,"Enter 10 digit phone no.");
+}
+
+else{
+error_mobilenumber.setText(" ");
+}
     }
 }

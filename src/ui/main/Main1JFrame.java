@@ -167,14 +167,14 @@ public class Main1JFrame extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Edwardian Script ITC", 1, 48)); // NOI18N
         jLabel12.setText("Dream Fullfillment...");
         WorkArea.add(jLabel12);
-        jLabel12.setBounds(670, 710, 430, 48);
+        jLabel12.setBounds(590, 560, 430, 48);
         WorkArea.add(jLabel16);
         jLabel16.setBounds(910, 340, 0, 150);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Rs.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Rs Main.png"))); // NOI18N
         jLabel4.setText("jLabel4");
         WorkArea.add(jLabel4);
-        jLabel4.setBounds(380, 160, 290, 150);
+        jLabel4.setBounds(380, 160, 290, 190);
 
         jSplitPane.setRightComponent(WorkArea);
 

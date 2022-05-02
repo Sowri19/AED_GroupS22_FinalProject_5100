@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
-/**
- *
- * @author Pavithra Ramkumar
- */
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +11,6 @@ public class RS_Entertainment_SingerORG extends RS_Organization {
         super(name, contact, city);
         listOfSinger = new ArrayList<>();
     }
-
 
     public List<RS_Entertainment_Singer> getListOfSinger() {
         return listOfSinger;
@@ -38,4 +29,4 @@ public class RS_Entertainment_SingerORG extends RS_Organization {
         listOfSupervisor.remove(supr);
     }
 
-
+}
